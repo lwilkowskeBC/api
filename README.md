@@ -21,7 +21,7 @@ This should help empower email remarketing, cart upsells, cross-browser carts fo
 
 [Swagger](http://swagger.io/) serves as a set of rules for a format describing REST APIs. The format is both machine-readable and human-readable. Descriptions of each field are included inline to help disambiguate terms (we might call things by different names internally than what you're used to).
 
-If you are looking for something more readable, we suggest trying out the [Swagger browser editor](editor.swagger.io/#/?import=https://github.com/bigcommerce/api/blob/master/swagger/checkout-draft.yaml).
+If you are looking for something more readable, we suggest trying out the [Swagger browser editor](https://editor.swagger.io/#/?import=https://github.com/bigcommerce/api/blob/master/swagger/checkout-draft.yaml).
 
 ## How to provide feedback
 
