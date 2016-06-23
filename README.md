@@ -25,5 +25,5 @@ If you are looking for something more readable, we suggest trying out the [Swagg
 
 ## How to provide feedback
 
-To provide your feedback for how we might improve this API, please submit comments on the latest pull request - commenting directly on lines ([instructions here](https://developer.github.com/guides/working-with-comments/#pull-request-comments-on-a-line)) will help target your feedback to particular areas. Alternatively, you can [open issues](https://help.github.com/articles/creating-an-issue/) as well. 
+To provide your feedback for how we might improve this API, please submit comments on the latest pull request - commenting directly on lines ([instructions here](https://developer.github.com/guides/working-with-comments/#pull-request-comments-on-a-line)) will help target your feedback to particular areas. This is preferred for streamlined conversation and centralizing the discussion.
 
