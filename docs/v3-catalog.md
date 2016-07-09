@@ -408,7 +408,7 @@ You can include sub-resources on a product with a comma separated list by using 
 
 ## v3 Catalog API Reference
 
-View the documentation generated from the Swagger file [here](https://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+View the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
 
 ### Endpoints
 
