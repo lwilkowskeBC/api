@@ -27,7 +27,7 @@ View the v3 Catalog API overview [here](./docs/v3-catalog.md).
 
 View the Swagger for the v3 Catalog API [here](https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
 
-View the documentation generated from the Swagger file [here](https://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
+View the documentation generated from the Swagger file [here](http://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/v3-catalog.yaml).
 
 ## Request for Comments on proposed BigCommerce Cart API
 
