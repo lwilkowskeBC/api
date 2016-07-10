@@ -43,7 +43,7 @@ Existing v2 client ids and tokens will also work with the v3 API. So if you've a
 
 ## What's not here?
 
-If your currently consuming our v2 API, there are some catalog endpoints and elements you'll notice are missing from this version. Some of the items are intentional and we're iterating on others, making sure they're done right.
+If your currently consuming our v2 API, there are some catalog endpoints and elements you'll notice are missing from this version. Some of the items are intentional and we're iterating on others, making sure they're done right. 
 
 - Intentional
   - Product -> Configurable Fields
@@ -61,6 +61,8 @@ If your currently consuming our v2 API, there are some catalog endpoints and ele
   - Product -> Open Graph and Accounting fields
     - May group into their own product objects to keep resource clean
 
+You can see how we're planning to iterate by looking at the [public API roadmap](https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap). 
+
 ## v2 Catalog API and Control Panel Interoperability
 
 The v3 Catalog API is essentially our catalog's future state. This means that many concepts don't map visibly to their v2 and control panel relatives.
@@ -70,9 +72,9 @@ The good news here is we've built this API with v2 interoperability in mind, so 
   - The Product resource on v3 has an option_set_id field that, if set, will prevent you from editing product options and modifiers directly. You will need to use v2 if you want to edit the Option Set or set the option_set_id field to null, which will remove the Option Set and allow you to attach options and modifiers directly.
   - In the Add / Edit Product section of our control panel any products created by v3 will have not have an Option Set applied, but merchants can still edit the Options. If the merchant edits chooses an Option Set any variants will be removed from the product.
 - Product Rules
-  - Any variant created in v3 with non-null core properties (price, weight, image, purchasablilty) will create a rule under the hood. Same with Modifier adjusters. These will show in v2 as Product Rules and any edits to them will shared across versions.
+  - Any variant created in v3 with non-null core properties (price, weight, image, purchasablilty) will create a rule under the hood. Same with Modifier adjusters. These will show in v2 as Product Rules and any edits to them will be shared across API versions.
 
-We're already working on refreshing the current add / edit product experience in our control panel to align with the concepts in v3.
+_We're already working on refreshing the current add / edit product experience in our control panel to align with the concepts in v3._
 
 ### Product POST w/ Variants
 
