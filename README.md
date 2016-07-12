@@ -6,18 +6,19 @@ Currently, this repo contains Swagger files and documentation for our v3 catalog
 
 ## Public API Roadmap
 
-We're in this together. Help us prioritize which APIs we build next: https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
+We're in this together. Help us prioritize which APIs we build next: 
+https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
 
 ## v3 Catalog API
 
-The new version of our catalog API is optimized for efficiency, while retaining backward-compatibility with v2. The v3 API surfaces all the power of BigCommerce's market-leading catalog functionality, with a simplified variant and modifier model that makes for a much better integration experience. 
+The new version of our catalog API is optimized for efficiency, while retaining backward compatibility with v2. The v3 API surfaces all the power of BigCommerce's market-leading catalog functionality, with a simplified variant and modifier model that makes for a much better integration experience. 
 
-A couple of the key features:
+A few of the key features:
 
 - Ability to create products, and all their variants, with one API call.
-- Ability to fetch list of all variants, separate from their parent product.
+- Ability to fetch a list of all variants, separate from their parent product.
   - Simple products automatically create base variants.
-- Clear delineation of options tied to SKUs, versus those that only adjust base products.
+- Clear delineation of options tied to SKUs, versus those that adjust only base products.
   - Options are now tied to variants, with adjustments tied to variant properties.
   - Modifiers are used when price, weight, and image adjustments don't require new variants.
 - Rules are not required when using options or modifiers.
@@ -57,5 +58,5 @@ If you are looking for something more readable, we suggest trying out the [Swagg
 
 ### How to provide feedback
 
-To provide your feedback on how we might improve this API, please submit comments on the latest pull request. Commenting directly on lines ([instructions here](https://developer.github.com/guides/working-with-comments/#pull-request-comments-on-a-line)) will help target your feedback to particular areas. We prefer this direct commenting to streamline conversation and centralize the discussion.
+To provide your feedback on how we might improve this API, please submit comments on the latest pull request. Commenting directly on lines ([instructions here](https://developer.github.com/guides/working-with-comments/#pull-request-comments-on-a-line)) will help target your feedback to particular areas. We prefer this direct commenting in order to streamline conversation and centralize the discussion.
 
