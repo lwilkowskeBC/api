@@ -7,15 +7,16 @@ https://github.com/bigcommerce/api/issues
 
 **Want to see what we have in development, and help direct our roadmap? View our public API roadmap here:** https://trello.com/b/1Od4oCsl/bigcommerce-api-roadmap
 
-## Access & Authentication
+## Access and Authentication
 
 All BigCommerce stores have access to the v3 Catalog API.
 
 The base URI is: https://api.bigcommerce.com/stores/{store_hash}/v3/
 
 To authenticate, you'll need to use an OAuth client ID and token, sent along with the following headers:
-- Accept: application/json
-- X-Auth-Client: {client_id}
+  
+- Accept: application/json  
+- X-Auth-Client: {client_id}  
 - X-Auth-Token: {oauth_token}
 
 The flow to register for a client ID and retrieve a token is the same as with the v2 API:
@@ -26,7 +27,7 @@ On our short-term roadmap is the ability to more easily create OAuth credentials
 
 Existing v2 client ids and tokens will also work with the v3 API. So, if you've already integrated with v2 using our OAuth flow, you should be golden!
 
-## What's new?
+## What's New?
 
 - Variants
   - Every purchasable entity in the catalog is now a variant. When you create a product without any options, we automatically create a variant for you. This enables enhanced flows around inventory management, such as the ability to solely use the variants endpoint to manage inventory levels.
@@ -42,7 +43,7 @@ Existing v2 client ids and tokens will also work with the v3 API. So, if you've 
 - Full Access to Modifer Configuration values
   - Properties like number-only field limits, and product-list inventory adjustment settings, are now available via this API. This exposes more than 20 properties previously unavailable to our developers.
 
-## What's not here?
+## What's Not Here?
 
 If you're currently consuming our v2 API, you'll notice that some catalog endpoints and elements are missing from this version. Some of the omissions are intentional; we're iterating on others, making sure they're done right. 
 
@@ -78,7 +79,7 @@ The good news here is we've built this API with v2 interoperability in mind. So 
 
 _We're already refreshing our control panel's Add/Edit Product workflow to align with the concepts in v3._
 
-### Product POST w/ Variants
+### Product POST with Variants
 
 When you include variants in your Product POST, we'll automatically create all the options and option values for you. If you don't pass the price and weight with the variants, the product price and weight will be used for the variants on the storefront.
 
@@ -419,55 +420,55 @@ Please view the documentation generated from the Swagger file [here](http://edit
 
 HTTP request | Description
 ------------- | -------------
-**GET** /catalog/products | Returns a paginated collection of Products objects from the BigCommerce Catalog
-**POST** /catalog/products | Creates a Product object in the BigCommerce Catalog
-**DELETE** /catalog/products | Deletes one or more Product objects from the BigCommerce Catalog, by ID or filter
-**GET** /catalog/products/{product_id} | Returns a Product object from the BigCommerce Catalog
-**PUT** /catalog/products/{product_id} | Updates a Product object in the BigCommerce Catalog
-**DELETE** /catalog/products/{product_id} | Deletes a Product object from the BigCommerce Catalog
+**GET** /catalog/products | Returns a paginated collection of Products objects from the BigCommerce Catalog.
+**POST** /catalog/products | Creates a Product object in the BigCommerce Catalog.
+**DELETE** /catalog/products | Deletes one or more Product objects from the BigCommerce Catalog, by ID or filter.
+**GET** /catalog/products/{product_id} | Returns a Product object from the BigCommerce Catalog.
+**PUT** /catalog/products/{product_id} | Updates a Product object in the BigCommerce Catalog.
+**DELETE** /catalog/products/{product_id} | Deletes a Product object from the BigCommerce Catalog.
 **GET** /catalog/variants | Returns a paginated collection of Variant objects from the BigCommerce Catalog.
-**GET** /catalog/variants/{variant_id} | Returns a Variant from the BigCommerce Catalog
-**PUT** /catalog/variants/{variant_id} | Updates a Variant in the BigCommerce Catalog
-**DELETE** /catalog/variants/{variant_id} | Deletes a Variant object from the BigCommerce Catalog
-**GET** /catalog/products/{product_id}/images | Returns a list of product images
+**GET** /catalog/variants/{variant_id} | Returns a Variant from the BigCommerce Catalog.
+**PUT** /catalog/variants/{variant_id} | Updates a Variant in the BigCommerce Catalog.
+**DELETE** /catalog/variants/{variant_id} | Deletes a Variant object from the BigCommerce Catalog.
+**GET** /catalog/products/{product_id}/images | Returns a list of product images.
 **POST** /catalog/products/{product_id}/images | Creates an image on a product. Files (form post) are valid parameters.
-**GET** /catalog/products/{product_id}/images/{image_id} | Returns a specific product image
-**PUT** /catalog/products/{product_id}/images/{image_id} | Updates a specific product image
-**DELETE** /catalog/products/{product_id}/images/{image_id} | Removes a specific product image
+**GET** /catalog/products/{product_id}/images/{image_id} | Returns a specific product image.
+**PUT** /catalog/products/{product_id}/images/{image_id} | Updates a specific product image.
+**DELETE** /catalog/products/{product_id}/images/{image_id} | Removes a specific product image.
 **GET** /catalog/products/{product_id}/variants | Returns a Variant object list from the BigCommerce Catalog.
-**POST** /catalog/products/{product_id}/variants | Creates a Variant object
-**GET** /catalog/products/{product_id}/variants/{variant_id} | Gets a Variant object
-**PUT** /catalog/products/{product_id}/variants/{variant_id} | Updates a Variant object
-**DELETE** /catalog/products/{product_id}/variants/{variant_id} | Deletes a Variant object
-**POST** /catalog/products/{product_id}/variants/{variant_id}/image | Adds an image to a variant; the image will show on the storefront when the variant is selected
-**GET** /catalog/products/{product_id}/options | Gets an array of Option objects
-**POST** /catalog/products/{product_id}/options | Creates an Option object
-**PUT** /catalog/products/{product_id}/options/{option_id} | Updates a Product's Option, based on the `product_id` and `option_id`
-**DELETE** /catalog/products/{product_id}/options/{option_id} | Deletes a Product's Option, based on the `product_id` and `option_id`
-**GET** /catalog/products/{product_id}/modifiers | Gets an array of Modifier objects
-**POST** /catalog/products/{product_id}/modifiers | Creates a Modifier
-**GET** /catalog/products/{product_id}/modifiers/{modifier_id} | Gets a Product Modifier, by `modifier_id`
-**PUT** /catalog/products/{product_id}/modifiers/{modifier_id} | Updates an Product's Modifier, based on the `product_id` and `modifier_id`
+**POST** /catalog/products/{product_id}/variants | Creates a Variant object.
+**GET** /catalog/products/{product_id}/variants/{variant_id} | Gets a Variant object.
+**PUT** /catalog/products/{product_id}/variants/{variant_id} | Updates a Variant object.
+**DELETE** /catalog/products/{product_id}/variants/{variant_id} | Deletes a Variant object.
+**POST** /catalog/products/{product_id}/variants/{variant_id}/image | Adds an image to a variant; the image will show on the storefront when the variant is selected.
+**GET** /catalog/products/{product_id}/options | Gets an array of Option objects.
+**POST** /catalog/products/{product_id}/options | Creates an Option object.
+**PUT** /catalog/products/{product_id}/options/{option_id} | Updates a Product's Option, based on the `product_id` and `option_id`.
+**DELETE** /catalog/products/{product_id}/options/{option_id} | Deletes a Product's Option, based on the `product_id` and `option_id`.
+**GET** /catalog/products/{product_id}/modifiers | Gets an array of Modifier objects.
+**POST** /catalog/products/{product_id}/modifiers | Creates a modifier.
+**GET** /catalog/products/{product_id}/modifiers/{modifier_id} | Gets a Product Modifier, by `modifier_id`.
+**PUT** /catalog/products/{product_id}/modifiers/{modifier_id} | Updates an Product's Modifier, based on the `product_id` and `modifier_id`.
 **DELETE** /catalog/products/{product_id}/modifiers/{modifier_id} | Delete a Product's Modifier based on the product_id and modifier_id.
-**POST** /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}image | Adds an image to a modifier value; the image will show on the storefront when the modifier is selected
-**DELETE** /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image | Deletes the image applied to show when the modifier value is selected
-**GET** /catalog/categories | Returns a paginated categories collection from the BigCommerce Catalog
-**POST** /catalog/categories | Creates a Category object in the BigCommerce Catalog
-**DELETE** /catalog/categories | Delete a Category object from the BigCommerce Catalog
-**GET** /catalog/categories/{category_id} | Returns a Category object from the BigCommerce Catalog
-**PUT** /catalog/categories/{category_id} | Updates a Category object in the BigCommerce Catalog
-**DELETE** /catalog/categories/{category_id} | Deletes one or more Catggory objects from the BigCommerce catalog
-**POST** /catalog/categories/{category_id}/image | Creates an image on a category; publicly accessible URLs and files (form post) are valid parameters
-**DELETE** /catalog/categories/{category_id}/image | Deletes a Category image the BigCommerce Catalog
+**POST** /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}image | Adds an image to a modifier value; the image will show on the storefront when the modifier is selected.
+**DELETE** /catalog/products/{product_id}/modifiers/{modifier_id}/values/{value_id}/image | Deletes the image applied to show when the modifier value is selected.
+**GET** /catalog/categories | Returns a paginated categories collection from the BigCommerce Catalog.
+**POST** /catalog/categories | Creates a Category object in the BigCommerce Catalog.
+**DELETE** /catalog/categories | Delete a Category object from the BigCommerce Catalog.
+**GET** /catalog/categories/{category_id} | Returns a Category object from the BigCommerce Catalog.
+**PUT** /catalog/categories/{category_id} | Updates a Category object in the BigCommerce Catalog.
+**DELETE** /catalog/categories/{category_id} | Deletes one or more Catggory objects from the BigCommerce catalog.
+**POST** /catalog/categories/{category_id}/image | Creates an image on a category; publicly accessible URLs and files (form post) are valid parameters.
+**DELETE** /catalog/categories/{category_id}/image | Deletes a Category image from the BigCommerce Catalog.
 **GET** /catalog/categories/tree | Returns the categories tree, a nested lineage of the categories with parent->child relationship. The Category objects returned reflect a simplified version of the Category objects returned in the rest of this API.
-**GET** /catalog/brands | Returns a paginated collection of Brand objects from the BigCommerce Catalog
-**POST** /catalog/brands | Create a Brand object in the BigCommerce Catalog
-**DELETE** /catalog/brands | Delete one or more Brand objects from the BigCommerce Catalog
-**GET** /catalog/brands/{brand_id} | Gets Brand objects
-**PUT** /catalog/brands/{brand_id} | Updates a Brand in the BigCommerce Catalog
-**DELETE** /catalog/brands/{brand_id} | Deletes a Brand from the BigCommerce Catalog
-**POST** /catalog/brands/{brand_id}/image | Creates an image on a Brand; publicly accessible URLs and files (form post) are valid parameters
-**DELETE** /catalog/brands/{brand_id}/image | Delete a Brand image the BigCommerce Catalog
+**GET** /catalog/brands | Returns a paginated collection of Brand objects from the BigCommerce Catalog.
+**POST** /catalog/brands | Create a Brand object in the BigCommerce Catalog.
+**DELETE** /catalog/brands | Delete one or more Brand objects from the BigCommerce Catalog.
+**GET** /catalog/brands/{brand_id} | Gets Brand objects.
+**PUT** /catalog/brands/{brand_id} | Updates a Brand in the BigCommerce Catalog.
+**DELETE** /catalog/brands/{brand_id} | Deletes a Brand from the BigCommerce Catalog.
+**POST** /catalog/brands/{brand_id}/image | Creates an image on a Brand; publicly accessible URLs and files (form post) are valid parameters.
+**DELETE** /catalog/brands/{brand_id}/image | Delete a Brand image the BigCommerce Catalog.
 
 ### Models
 
@@ -476,13 +477,13 @@ HTTP request | Description
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The unique numeric ID of the brand; increments sequentially | [optional] 
-**name** | **string** | The name of the brand; must be unique | [optional] 
-**page_title** | **string** | The title shown in the browser while viewing the brand | [optional] 
-**meta_keywords** | **string[]** | Comma-separated list of meta keywords to include in the HTML | [optional] 
-**meta_description** | **string** | A meta description to include | [optional] 
-**search_keywords** | **string** | A comma-separated list of keywords that can be used to locate this brand | [optional] 
-**image_url** | **string** | A valid image | [optional] 
+**id** | **int** | The unique numeric ID of the brand; increments sequentially. | [optional] 
+**name** | **string** | The name of the brand; must be unique. | [optional] 
+**page_title** | **string** | The title shown in the browser while viewing the brand. | [optional] 
+**meta_keywords** | **string[]** | Comma-separated list of meta keywords to include in the HTML. | [optional] 
+**meta_description** | **string** | A meta description to include. | [optional] 
+**search_keywords** | **string** | A comma-separated list of keywords that can be used to locate this brand. | [optional] 
+**image_url** | **string** | A valid image. | [optional] 
 
 
 ##### BulkPricingRule
@@ -490,7 +491,7 @@ Name | Type | Description | Notes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The ID of the bulk pricing rule | [optional] 
+**id** | **int** | The ID of the bulk pricing rule. | [optional] 
 **quantity_min** | **int** | The minimum (inclusive) quantity of a product to satisfy this rule. Must be greater than or equal to 0 (zero). | [optional] 
 **quantity_max** | **int** | The maximum (inclusive) quantity of a product to satisfy this rule. Must be greater than the `quantity_min` value – unless this field has a value of zero, in which case there will be no maximum bound for this rule. | [optional] 
 **type** | **string** | The type of adjustment that is made. One of: `price` - adjustment amount per product; `percent` - adjustment as a percent of the original price; `fixed` - adjusted absolute price of the product. | [optional] 
@@ -502,14 +503,14 @@ Name | Type | Description | Notes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The unique numeric ID of the category; increments sequentially | [optional] 
+**id** | **int** | The unique numeric ID of the category; increments sequentially. | [optional] 
 **parent_id** | **int** | The unique numeric ID of the category&#39;s parent. This field controls where the category sits in the tree of categories that organize the catalog. | [optional] 
 **name** | **string** | The name displayed for the category. Name is unique to the category&#39;s siblings. | [optional] 
 **description** | **string** | The product description, which can include HTML formatting. | [optional] 
-**views** | **int** | Number of views that the category has on the storefront | [optional] 
+**views** | **int** | Number of views that the category has on the storefront. | [optional] 
 **sort** | **int** | Priority that this category will be given when included in the menu and category pages. The lower the number, the closer the category will be to the top of the results. | [optional] 
 **page_title** | **string** | Custom title for the category page. If not defined, the category name will be used as the meta title. | [optional] 
-**meta_keywords** | **string[]** | Custom meta keywords for the category page. If not defined, the store default keywords will be used. Must post as an array like: [\&quot;awesome\&quot;,\&quot;sauce\&quot;] | [optional] 
+**meta_keywords** | **string[]** | Custom meta keywords for the category page. If not defined, the store default keywords will be used. Must post as an array like: `[\&quot;awesome\&quot;,\&quot;sauce\&quot;]`. | [optional] 
 **meta_description** | **string** | Custom meta description for the category page. If not defined, the store default meta description will be used. | [optional] 
 **layout_file** | **string** | The layout template file used to render this category. | [optional] 
 **image_file** | **string** | URL of the image file shown for this category on the storefront. Images can be uploaded to `/categories/{categoryId}/images`. | [optional] 
@@ -537,15 +538,15 @@ Name | Type | Description | Notes
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**total** | **int** | Total number of items returned in the result set | [optional]
-**count** | **int** | Total number of items in the collection | [optional] 
-**per_page** | **int** | The number of items returned in the collection per page, controlled by the limit parameter | [optional] 
-**current_page** | **int** | The page you are currently on within the collection | [optional] 
-**total_pages** | **int** | The total number of pages in the collection | [optional] 
-**links** | **object** |  | [optional] 
-**links.previous** | **string** | Link to the previous page returned in the response | [optional] 
-**links.current** | **string** | Link to the current page returned in the response | [optional] 
-**links.next** | **string** | Link to the next page returned in the response | [optional] 
+**total** | **int** | Total number of items returned in the result set. | [optional]
+**count** | **int** | Total number of items in the collection. | [optional] 
+**per_page** | **int** | The number of items returned in the collection per page, controlled by the limit parameter. | [optional] 
+**current_page** | **int** | The page you are currently on within the collection. | [optional] 
+**total_pages** | **int** | The total number of pages in the collection. | [optional] 
+**links** | **object** | ?? Collection of page links. ?? | [optional] 
+**links.previous** | **string** | Link to the previous page returned in the response. | [optional] 
+**links.current** | **string** | Link to the current page returned in the response. | [optional] 
+**links.next** | **string** | Link to the next page returned in the response. | [optional] 
 
 ##### Modifier
 ------
@@ -557,14 +558,14 @@ Name | Type | Description | Notes
 **name** | **string** | The unique option name; auto-generated from the display name, a timestamp, and the product ID. | [optional] 
 **display_name** | **string** | The name of the option shown on the storefront. | [optional] 
 **type** | **string** | Possible values: `date`, `checkbox`, `file`, `text`, `multi_line_text`, `numbers_only_text`, `radio_buttons`, `rectangles`, `dropdown`, `product_list`, `product_list_with_images`, `swatch`. | [optional] 
-**config** | **object** | (See `OptionConfig` below) | [optional] 
-**values** | **object** | ?? Collection of values ?? | [optional] 
+**config** | **object** | (See `OptionConfig` below.) | [optional] 
+**values** | **object** | ?? Collection of values. ?? | [optional] 
 **values.id** | **int** | The unique numeric ID of the value; increments sequentially. | [optional] 
 **values.is_default** | **bool** | The flag for preselecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers. | [optional] 
 **values.label** | **string** | The text displayed to identify the value on the storefront. | [optional] 
 **values.sort_order** | **int** | The order in which the value will be displayed on the product page. | [optional] 
 **values.value_data** | **object** | Extra data describing the value, based on the value's associated type of option or modifier. A `swatch` type requires an array of colors, with up to three hexidecimal color keys. A `product_list` type requires a `product_id`. A `checkbox` type requires a boolean flag called `checked_value` to determine which value is considered to be the checked state. | [optional] 
-**values.adjusters** | **object** | ?? Collection of adjusters ?? | [optional] ??
+**values.adjusters** | **object** | ?? Collection of adjusters. ?? | [optional] ??
 **values.adjusters.adjuster** | **string** | The type of adjuster – either `relative` or `percentage` – for the variant's price or weight, when the modifier value is selected on the storefront. | [optional] 
 **values.adjusters.adjuster_value** | **float** | The numeric amount by which the adjuster will change the variant's price or the weight, when the modifier value is selected on the storefront. | [optional] 
 
@@ -682,7 +683,7 @@ Name | Type | Description | Notes
 **is_preorder_only** | **bool** | If set to `false`, the product will _not_ change its availability from `pre-order` to `available` on the release date. Otherwise, the product's availability/status will change to `available` on the release date. | [optional] 
 **is_price_hidden** | **bool** | The default `false` value indicates that this product's price will be shown on the product page. If set to `true`, the price will be hidden. (Note: To successfully set `is_price_hidden` to `true`, the `availability` value must be `disabled`.) | [optional] 
 **price_hidden_label** | **string** | By default, an empty string. If `is_price_hidden` is `true`, the `price_hidden_label` value will be displayed instead of the price. (Note: To successfully set a non-empty string value for `price_hidden_label`, the `availability` value must be `disabled`.) | [optional] 
-**images** | **object** |  | [optional] 
+**images** | **object** | ?? [Description to be added] ?? | [optional] 
 **images.id** | **int** | The unique numeric ID of the image; increments sequentially. | [optional] 
 **images.product_id** | **int** | The unique numeric identifier for the product associated with the image. | [optional] 
 **images.is_thumbnail** | **bool** | Flag for identifying whether or ot the image is used as the product&#39;s thumbnail. | [optional] 

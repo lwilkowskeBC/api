@@ -56,7 +56,7 @@ This should help empower email remarketing, cart upsells, cross-browser carts fo
 
 If you are looking for something more readable, we suggest trying out the [Swagger browser editor](https://editor.swagger.io/#/?import=https://raw.githubusercontent.com/bigcommerce/api/master/swagger/checkout-draft.yaml).
 
-### How to provide feedback
+### How to Provide Feedback
 
 To provide your feedback on how we might improve this API, please submit comments on the latest pull request. Commenting directly on lines ([instructions here](https://developer.github.com/guides/working-with-comments/#pull-request-comments-on-a-line)) will help target your feedback to particular areas. We prefer this direct commenting in order to streamline conversation and centralize the discussion.
 
