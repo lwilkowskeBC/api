@@ -33,7 +33,7 @@ View the documentation generated from the Swagger file [here](http://editor.swag
 
 Welcome to the BigCommerce Cart API RFC!
 
-In this document, we have opened up our proposed Cart API schema to solicit the developer community's feedback. Our goal is to ensure you, as a BigCommerce partner or developer, have the tools you need to build robust tools & cohesive integrations that benefit our merchants (your clients) and push our platform and ecosystem forward.
+In this document, we have opened up our proposed Cart API schema to solicit the developer community's feedback. Our goal is to ensure you, as a BigCommerce partner or developer, have the tools you need to build robust tools and cohesive integrations that benefit our merchants (your clients) and push our platform and ecosystem forward.
 
 Building a world-class API is an iterative task. Our first release of this Cart API will be read-only, allowing you to access the contents and details of a BigCommerce cart on the storefront (via JavaScript), and to also access them via our backend HTTP REST API. Future releases will enable writable access to parts of the cart, unblocking many more possibilities and use cases.
 
