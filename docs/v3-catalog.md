@@ -431,7 +431,7 @@ HTTP request | Description
 **PUT** /catalog/variants/{variant_id} | Updates a Variant in the BigCommerce Catalog.
 **DELETE** /catalog/variants/{variant_id} | Deletes a Variant object from the BigCommerce Catalog.
 **GET** /catalog/products/{product_id}/images | Returns a list of product images.
-**POST** /catalog/products/{product_id}/images | Creates an image on a product. Files (form post) are valid parameters.
+**POST** /catalog/products/{product_id}/images | Creates an image on a product. Files (`form post`) are valid parameters.
 **GET** /catalog/products/{product_id}/images/{image_id} | Returns a specific product image.
 **PUT** /catalog/products/{product_id}/images/{image_id} | Updates a specific product image.
 **DELETE** /catalog/products/{product_id}/images/{image_id} | Removes a specific product image.
@@ -458,7 +458,7 @@ HTTP request | Description
 **GET** /catalog/categories/{category_id} | Returns a Category object from the BigCommerce Catalog.
 **PUT** /catalog/categories/{category_id} | Updates a Category object in the BigCommerce Catalog.
 **DELETE** /catalog/categories/{category_id} | Deletes one or more Catggory objects from the BigCommerce catalog.
-**POST** /catalog/categories/{category_id}/image | Creates an image on a category; publicly accessible URLs and files (form post) are valid parameters.
+**POST** /catalog/categories/{category_id}/image | Creates an image on a category; publicly accessible URLs and files (`form post`) are valid parameters.
 **DELETE** /catalog/categories/{category_id}/image | Deletes a Category image from the BigCommerce Catalog.
 **GET** /catalog/categories/tree | Returns the categories tree, a nested lineage of the categories with parent->child relationship. The Category objects returned reflect a simplified version of the Category objects returned in the rest of this API.
 **GET** /catalog/brands | Returns a paginated collection of Brand objects from the BigCommerce Catalog.
@@ -467,7 +467,7 @@ HTTP request | Description
 **GET** /catalog/brands/{brand_id} | Gets Brand objects.
 **PUT** /catalog/brands/{brand_id} | Updates a Brand in the BigCommerce Catalog.
 **DELETE** /catalog/brands/{brand_id} | Deletes a Brand from the BigCommerce Catalog.
-**POST** /catalog/brands/{brand_id}/image | Creates an image on a Brand; publicly accessible URLs and files (form post) are valid parameters.
+**POST** /catalog/brands/{brand_id}/image | Creates an image on a Brand; publicly accessible URLs and files (`form post`) are valid parameters.
 **DELETE** /catalog/brands/{brand_id}/image | Delete a Brand image the BigCommerce Catalog.
 
 ### Models
