@@ -540,7 +540,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | Total number of items returned in the result set. | [optional]
 **count** | **int** | Total number of items in the collection. | [optional] 
-**per_page** | **int** | The number of items returned in the collection per page, controlled by the limit parameter. | [optional] 
+**per_page** | **int** | The number of items returned in the collection per page, controlled by the `limit` parameter. | [optional] 
 **current_page** | **int** | The page you are currently on within the collection. | [optional] 
 **total_pages** | **int** | The total number of pages in the collection. | [optional] 
 **links** | **object** | ?? Collection of page links. ?? | [optional] 
@@ -558,7 +558,7 @@ Name | Type | Description | Notes
 **name** | **string** | The unique option name; auto-generated from the display name, a timestamp, and the product ID. | [optional] 
 **display_name** | **string** | The name of the option shown on the storefront. | [optional] 
 **type** | **string** | Possible values: `date`, `checkbox`, `file`, `text`, `multi_line_text`, `numbers_only_text`, `radio_buttons`, `rectangles`, `dropdown`, `product_list`, `product_list_with_images`, `swatch`. | [optional] 
-**config** | **object** | (See `OptionConfig` below.) | [optional] 
+**config** | **object** | (Please see [OptionConfig](#optionconfig).) | [optional] 
 **values** | **object** | ?? Collection of values. ?? | [optional] 
 **values.id** | **int** | The unique numeric ID of the value; increments sequentially. | [optional] 
 **values.is_default** | **bool** | The flag for preselecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers. | [optional] 
@@ -580,7 +580,7 @@ Name | Type | Description | Notes
 **name** | **string** | The unique option name, auto-generated from the display name, a timestamp, and the product ID. | [optional] 
 **display_name** | **string** | The text displayed to identify the option on the storefront. | [optional] 
 **type** | **string** | Possible values: `radio_buttons`, `rectangles`, `dropdown`, `product_list`, `product_list_with_images`, `swatch` | [optional] 
-**config** | **object** | (See `OptionConfig` below) | [optional] 
+**config** | **object** | (Please see [OptionConfig](#optionconfig).) | [optional] 
 **values** | **object** | ?? Collection of values ?? | [optional] 
 **values.id** | **int** | The unique numeric ID of the value; increments sequentially. | [optional] 
 **values.is_default** | **bool** | The flag for preselecting a value as the default on the storefront. This field is not supported for `swatch` options/modifiers. | [optional] 
@@ -588,35 +588,35 @@ Name | Type | Description | Notes
 **values.sort_order** | **int** | The order in which the value will be displayed on the product page. | [optional] 
 **values.value_data** | **object** | Extra data describing the value, based on the value's associated type of option or modifier. A `swatch` type requires an array of colors, with up to three hexidecimal color keys. A `product_list` type requires a `product_id`. A `checkbox` type requires a boolean flag called `checked_value` to determine which value is considered to be the checked state. | [optional]
 
-##### OptionConfig
+##### <a name="optionconfig"></a> OptionConfig
 ------
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default_value** | **string** | The default value shown for an option. One of: an ISO-8601–formatted string (`date`), a string (`text` or `multi_line_text`), or a numeric string (`numbers_only_text`). | [optional] 
-**checked_by_default** | **bool** | (checkbox) Flag that sets the checkbox to be checked by default. | [optional] 
-**checkbox_label** | **string** | (checkbox) Label displayed for the checkbox option. | [optional] 
-**date_limited** | **bool** | (date) Flag that limits the date allowed to be entered on a date option. | [optional] 
-**date_limit_mode** | **string** | (date) The type of limit allowed to be entered on a date option (`earliest`, `range`, or `latest`). | [optional] 
-**date_earliest_value** | **int** | (date) The earliest date allowed to be entered on a date option, as an ISO-8601–formatted string. | [optional] 
-**date_latest_value** | **int** | (date) The latest date allowed to be entered on a date option, as an ISO-8601–formatted string. | [optional] 
-**file_types_mode** | **string** | Optional restriction on file types for a file-upload option. One of: `specific` - restricts upload to particular file types; or `all` - allows all files types. | [optional] 
-**file_types_supported** | **string[]** | The types of files allowed for uploading if the `file_type_option` is set to `specific`. One of: `images` - allows upload of image MIME types (`bmp`,`gif`,`jpg`,`jpeg`,`jpe`,`jif`,`jfif`,`jfi`,`png`,`wbmp`,`xbm`,`tiff`); `documents` - allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`); or `other` - allows other file types defined in the `file_types_other` array. | [optional] 
-**file_types_other** | **string[]** | A list of custom file types allowed for the file upload option. | [optional] 
-**file_max_size** | **int** | The maximum size of files that can be used in the file upload option. | [optional] 
-**text_characters_limited** | **bool** | (text, multi_line_text) Flag to validate the length of the text of a text or multi-line text input. | [optional] 
-**text_min_length** | **int** | (text, multi_line_text) The minimum length allowed for a text or multi-line text option. | [optional] 
-**text_max_length** | **int** | (text, multi_line_text) The maximum length allowed for a text or multi line text option. | [optional] 
-**text_lines_limited** | **bool** | (multi_line_text) Flag to validate the maximum number of lines allowed on a multi-line text input. | [optional] 
-**text_max_lines** | **int** | (multi_line_text) The maximum number of lines allowed on a multi-line text input. | [optional] 
-**number_limited** | **bool** | (numbers_only_text) Flag to limit the value of a number option. | [optional] 
-**number_limit_mode** | **string** | (numbers_only_text) The type of limit allowed to be entered on a number option. One of: `lowest`, `highest`, or `range`. | [optional] 
-**number_lowest_value** | **float** | (numbers_only_text) The lowest allowed value for a number option if `number_limited` is true. | [optional] 
-**number_highest_value** | **float** | (numbers_only_text) The highest allowed value for a number option if `number_limited` is true. | [optional] 
-**number_integers_only** | **bool** | (numbers_only_text) Flag to restrict a number option's input to whole numbers only. | [optional] 
-**product_list_adjusts_inventory** | **bool** | (product_list, product_list_with_images) Flag for automatically adjusting inventory on a product included in the list. | [optional] 
-**product_list_adjusts_pricing** | **bool** | (product_list, product_list_with_images) Flag to add the optional product's price to the main product's price. | [optional] 
-**product_list_shipping_calc** | **string** | (product_list, product_list_with_images)  How to factor the optional product&#39;s weight and dimensions into the shipping quote. One of: `none` - don&#39;t adjust; `weight` - use shipping weight only; or `package` - use shipping weight and package dimensions. | [optional] 
+**checked_by_default** | **bool** | (`checkbox`) Flag that sets the checkbox to be checked by default. | [optional] 
+**checkbox_label** | **string** | (`checkbox`) Label displayed for the checkbox option. | [optional] 
+**date_limited** | **bool** | (`date`) Flag that limits the date allowed to be entered on a date option. | [optional] 
+**date_limit_mode** | **string** | (`date`) The type of limit allowed to be entered on a date option (`earliest`, `range`, or `latest`). | [optional] 
+**date_earliest_value** | **int** | (`date`) The earliest date allowed to be entered on a date option, as an ISO-8601–formatted string. | [optional] 
+**date_latest_value** | **int** | (`date`) The latest date allowed to be entered on a date option, as an ISO-8601–formatted string. | [optional] 
+**file_types_mode** | **string** | (`file`) Optional restriction on file types for a file-upload option. One of: `specific` - restricts upload to particular file types; or `all` - allows all files types. | [optional] 
+**file_types_supported** | **string[]** | (`file`) The types of files allowed for uploading if the `file_type_option` is set to `specific`. One of: `images` - allows upload of image MIME types (`bmp`,`gif`,`jpg`,`jpeg`,`jpe`,`jif`,`jfif`,`jfi`,`png`,`wbmp`,`xbm`,`tiff`); `documents` - allows upload of document MIME types (`txt`,`pdf`,`rtf`,`doc`,`docx`,`xls`,`xlsx`,`accdb`,`mdb`,`one`,`pps`,`ppsx`,`ppt`,`pptx`,`pub`,`odt`,`ods`,`odp`,`odg`,`odf`); or `other` - allows other file types defined in the `file_types_other` array. | [optional] 
+**file_types_other** | **string[]** | (`file`) A list of custom file types allowed for the file upload option. | [optional] 
+**file_max_size** | **int** | (`file`) The maximum size of files that can be used in the file upload option. | [optional] 
+**text_characters_limited** | **bool** | (`text`, `multi_line_text`) Flag to validate the length of the text of a text or multi-line text input. | [optional] 
+**text_min_length** | **int** | (`text`, `multi_line_text`) The minimum length allowed for a text or multi-line text option. | [optional] 
+**text_max_length** | **int** | (`text`, `multi_line_text`) The maximum length allowed for a text or multi line text option. | [optional] 
+**text_lines_limited** | **bool** | (`multi_line_text`) Flag to validate the maximum number of lines allowed on a multi-line text input. | [optional] 
+**text_max_lines** | **int** | (`multi_line_text`) The maximum number of lines allowed on a multi-line text input. | [optional] 
+**number_limited** | **bool** | (`numbers_only_text`) Flag to limit the value of a number option. | [optional] 
+**number_limit_mode** | **string** | (`numbers_only_text`) The type of limit allowed to be entered on a number option. One of: `lowest`, `highest`, or `range`. | [optional] 
+**number_lowest_value** | **float** | (`numbers_only_text`) The lowest allowed value for a number option if `number_limited` is true. | [optional] 
+**number_highest_value** | **float** | (`numbers_only_text`) The highest allowed value for a number option if `number_limited` is true. | [optional] 
+**number_integers_only** | **bool** | (`numbers_only_text`) Flag to restrict a number option's input to whole numbers only. | [optional] 
+**product_list_adjusts_inventory** | **bool** | (`product_list`, `product_list_with_images`) Flag for automatically adjusting inventory on a product included in the list. | [optional] 
+**product_list_adjusts_pricing** | **bool** | (`product_list`, `product_list_with_images`) Flag to add the optional product's price to the main product's price. | [optional] 
+**product_list_shipping_calc** | **string** | (`product_list`, `product_list_with_images`)  How to factor the optional product&#39;s weight and dimensions into the shipping quote. One of: `none` - don&#39;t adjust; `weight` - use shipping weight only; or `package` - use shipping weight and package dimensions. | [optional] 
 
 ##### OptionValue
 ------
@@ -707,9 +707,9 @@ Name | Type | Description | Notes
 **bulk_pricing_rules.quantity_max** | **int** | The maximum (inclusive) quantity of a product to satisfy this rule. Must be greater than the `bulk_pricing_rules.quantity_min` value – unless this field has a value of zero, in which case there will be no maximum bound for this rule. | [optional] 
 **bulk_pricing_rules.type** | **string** | The type of bulk pricing adjustment that is made. One of: `price` - adjustment amount per product; `percent` - adjustment as a percentage of the original price; or `fixed` - adjusted absolute price of the product. | [optional] 
 **bulk_pricing_rules.amount** | **int** | The value of the ?? adjusted by the bulk pricing rule. | [optional] 
-**variants** | **object**  | (see below) | [optional] 
+**variants** | **object**  | (Please see [Variant](#variant).) | [optional] 
 
-##### Variant
+##### <a name="variant"></a> Variant
 ------
 
 Name | Type | Description | Notes
