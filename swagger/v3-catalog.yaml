@@ -185,7 +185,7 @@ paths:
       tags:
         - Catalog
       description: |
-        Gets all images on a product. 
+        Gets all images on a product.
       operationId: getProductImages
       responses:
         200:
@@ -236,7 +236,7 @@ paths:
       tags:
         - Catalog
       description: |
-        Gets image on a product. 
+        Gets image on a product.
       operationId: getProductImageById
       responses:
         200:
@@ -405,9 +405,9 @@ paths:
           description: |
             The id of the `Variant`.
           required: true
-          type: number
-          format: int
-        - name: image_file
+          type: string
+          format: url
+        - name: image_url
           description: |
             An image file. Support MIME types include GIF, JPEG, and PNG.
           required: true
@@ -426,7 +426,7 @@ paths:
             $ref: '#/definitions/NotFound'
         422:
           description: |
-            Image was not valid. This is the result of missing image_file field or incorrect file type. See the response for more details.
+            Image was not valid. This is the result of missing image_url field or incorrect file type. See the response for more details.
           schema:
             $ref: "#/definitions/ErrorResponse"
   /catalog/products/{product_id}/options:
@@ -672,9 +672,9 @@ paths:
       description: Add an image to a modifier value that will show on the storefront when it’s selected
       operationId: createModifierImage
       parameters:
-        - name: image_file
+        - name: image_url
           description: |
-            An image file. Support MIME types include GIF, JPEG, and PNG.
+            An image url. Support MIME types include GIF, JPEG, and PNG.
           required: true
           in: formData
           type: file
@@ -691,7 +691,7 @@ paths:
             $ref: '#/definitions/NotFound'
         422:
           description: |
-            Modifier image was not valid. This is the result of missing image_file fields or non-url for image_file field. See the response for more details.
+            Modifier image was not valid. This is the result of missing image_url fields or non-url for image_url field. See the response for more details.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -855,9 +855,9 @@ paths:
       tags:
         - Catalog
       parameters:
-        - name: image_file
+        - name: image_url
           description: |
-            An image file. Support MIME types include GIF, JPEG, and PNG.
+            An image url. Support MIME types include GIF, JPEG, and PNG.
           required: true
           in: body
           schema:
@@ -878,7 +878,7 @@ paths:
             $ref: '#/definitions/NotFound'
         422:
           description: |
-            Image was not valid. This is the result of missing image_file field or incorrect file type. See the response for more details.
+            Image was not valid. This is the result of missing image_url field or incorrect file type. See the response for more details.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -1057,9 +1057,9 @@ paths:
         Creates an image on a `Brand`. Publically accessible URLs and files (form post) are valid parameters.
       operationId: createBrandImage
       parameters:
-      - name: image_file
+      - name: image_url
         description: |
-          An image file. Support MIME types include GIF, JPEG, and PNG.
+          An image url. Support MIME types include GIF, JPEG, and PNG.
         required: true
         in: body
         schema:
@@ -1077,7 +1077,7 @@ paths:
             $ref: '#/definitions/NotFound'
         422:
           description: |
-            Image was not valid. This is the result of missing image_file field or incorrect file type. See the response for more details.
+            Image was not valid. This is the result of missing image_url field or incorrect file type. See the response for more details.
           schema:
             $ref: "#/definitions/ErrorResponse"
     delete:
@@ -1279,7 +1279,7 @@ definitions:
         items:
           $ref: "#/definitions/Modifier"
       meta:
-        $ref: "#/definitions/CollectionMeta" 
+        $ref: "#/definitions/CollectionMeta"
   ModifierResponse:
     description: |
       Response payload for the Bigcommerce API
@@ -1379,7 +1379,7 @@ definitions:
         items:
           $ref: "#/definitions/ProductImage"
       meta:
-        $ref: "#/definitions/CollectionMeta" 
+        $ref: "#/definitions/CollectionMeta"
   VariantCollectionResponse:
     description: |
       Response payload for the Bigcommerce API
@@ -1800,9 +1800,9 @@ definitions:
         description: |
           The description for the image.
         type: string
-      image_file:
+      image_url:
         description: |
-          The local path to the original image file uploaded to BigCommerce. Must be POSTed into as a multipart/form-data field.
+          Url of the original image file uploaded to BigCommerce. Must be POSTed into as a multipart/form-data field.
         type: string
       url_zoom:
         description: |
@@ -1810,11 +1810,11 @@ definitions:
         type: string
       url_standard:
         description: |
-          Url The standard url for this image.
+          The standard url for this image.
         type: string
       url_thumbnail:
         description: |
-          Url fThe thumbnail url for this image.
+          Url of the thumbnail for this image.
         type: string
       url_tiny:
         description: |
@@ -1905,7 +1905,7 @@ definitions:
         type: number
         format: double
         x-nullable: true
-        description: This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. 
+        description: This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight.
       purchasing_disabled:
         type: boolean
         description: If true, this variant will not be purchasable on the storefront
@@ -1952,7 +1952,7 @@ definitions:
       weight:
         type: string
         x-nullable: true
-        description: This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight. 
+        description: This variant's base weight on the storefront. If this value is null, the product's default weight (set in the Product resource's weight field) will be used as the base weight.
       purchasing_disabled:
         type: boolean
         description: If true, this variant will not be purchasable on the storefront
@@ -2003,7 +2003,7 @@ definitions:
     type: object
     description: |
       A BigCommerce category node object. Used to reflect parent <> child category relationships.
-    properties: 
+    properties:
       id:
         type: integer
         description: |
@@ -2134,7 +2134,7 @@ definitions:
         items:
           type: string
         description: |
-          Comma separated list of meta keywords to include in the HTML    
+          Comma separated list of meta keywords to include in the HTML
       meta_description:
         type: string
         description: |
@@ -2177,7 +2177,7 @@ definitions:
   OptionType:
     type: string
     description: |
-      The type of option, which determines how it will display on the storefront. For reference, former v2 API values: 
+      The type of option, which determines how it will display on the storefront. For reference, former v2 API values:
       RB = radio_buttons, RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch
     enum:
       - radio_buttons
@@ -2302,7 +2302,7 @@ definitions:
       product_list_adjusts_pricing:
         type: boolean
         description: |
-          (product_list, product_list_with_images) Flag to add the price of the optional product to the price of the main product 
+          (product_list, product_list_with_images) Flag to add the price of the optional product to the price of the main product
       product_list_shipping_calc:
         type: string
         description: |
@@ -2345,8 +2345,8 @@ definitions:
   ModifierType:
     type: string
     description: |
-      The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values: 
-      D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons, 
+      The type of modifier, which determines how it will display on the storefront. For reference, former v2 API values:
+      D = date, C = checkbox, F = file, T = text, MT = multi_line_text, N = numbers_only_text, RB = radio_buttons,
       RT = rectangles, S = dropdown, P = product_list, PI = product_list_with_images, CS = swatch
     enum:
       - date
